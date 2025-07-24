@@ -1,0 +1,194 @@
+/* Kromac UI v2 - Style Framework */
+
+/* CSS Variables */
+:root {
+  --kromac-primary-color: #2e86c1;
+  --kromac-success-color: #28b463;
+  --kromac-warning-color: #f1c40f;
+  --kromac-error-color: #cb4335;
+  --kromac-danger-color: #d68910;
+  --kromac-info-color: #d5dbdb;
+  --kromac-night-color: #d5dbdb;
+  --kromac-outline-color: #007bff;
+  --kromac-text-color: #212529;
+  --kromac-border-radius: 0.375rem;
+  --kromac-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    sans-serif;
+  --kromac-transition: all 0.2s ease-in-out;
+}
+
+/* Button Styles */
+
+.kromac-button--default {
+  font-family: var(--kromac-font-family);
+  border: none;
+  border-radius: var(--kromac-border-radius);
+  cursor: pointer;
+  transition: var(--kromac-transition);
+  font-weight: 500;
+  text-align: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.25s ease-in-out all;
+}
+
+.kromac-button--neon {
+  position: relative;
+  padding: 15px 30px;
+  font-size: 18px;
+  color: white;
+  background: black;
+  border: none;
+  cursor: pointer;
+  z-index: 1;
+  overflow: hidden;
+  border-radius: 10px;
+  transition: 0.25s ease-in-out all;
+}
+.kromac-button--neon::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: conic-gradient(
+    red,
+    orange,
+    yellow,
+    lime,
+    cyan,
+    blue,
+    magenta,
+    red
+  );
+  z-index: -1;
+  animation: rotate 2s linear infinite;
+  border-radius: 12px;
+  filter: blur(5px);
+}
+
+.kromac-button--neon::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+  background: black;
+  border-radius: 8px;
+  z-index: -1;
+}
+
+.kromac-button--neon:hover:not(:disabled) {
+  box-shadow: 0 0 5px rgb(0, 255, 255), 0 0 10px rgb(0, 255, 255);
+}
+
+.kromac-button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+/* Button Variants */
+.kromac-button--primary {
+  background-color: var(--kromac-primary-color);
+  color: white;
+}
+
+.kromac-button--primary:hover:not(:disabled) {
+  background-color: #014995;
+}
+
+.kromac-button--success {
+  background-color: var(--kromac-success-color);
+  color: white;
+}
+
+.kromac-button--success:hover:not(:disabled) {
+  background-color: #21904f;
+}
+
+.kromac-button--warning {
+  background-color: var(--kromac-warning-color);
+  color: black;
+}
+
+.kromac-button--warning:hover:not(:disabled) {
+  background-color: #c19d0c;
+}
+
+.kromac-button--error {
+  background-color: var(--kromac-error-color);
+  color: white;
+}
+
+.kromac-button--error:hover:not(:disabled) {
+  background-color: #a4382c;
+}
+
+.kromac-button--danger {
+  background-color: var(--kromac-danger-color);
+  color: white;
+}
+
+.kromac-button--danger:hover:not(:disabled) {
+  background-color: #b0710c;
+}
+
+.kromac-button--info {
+  background-color: var(--kromac-info-color);
+  color: black;
+}
+
+.kromac-button--info:hover:not(:disabled) {
+  background-color: #464b51;
+}
+
+.kromac-button--night {
+  background-color: var(--kromac-night-color);
+  color: white;
+}
+
+.kromac-button--night:hover:not(:disabled) {
+  background-color: #3e444a;
+}
+
+.kromac-button--outline {
+  background-color: transparent;
+  color: var(--kromac-outline-color);
+  border: 1px solid var(--kromac-outline-color);
+}
+
+.kromac-button--outline:hover:not(:disabled) {
+  background-color: var(--kromac-outline-color);
+  color: white;
+}
+
+/* Button Sizes */
+.kromac-button--small {
+  padding: 0.375rem 0.75rem;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.kromac-button--medium {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.kromac-button--large {
+  padding: 0.75rem 1.5rem;
+  font-size: 1.125rem;
+  line-height: 1.5;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
